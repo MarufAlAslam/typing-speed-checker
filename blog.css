@@ -2,4 +2,40 @@
     min-height: 100vh;
     padding: 20px;
     color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1240px;
+    margin: auto;
+}
+
+.blog-title {
+    margin-bottom: 30px;
+}
+
+.blog-question {
+    margin: 15px 0;
+}
+
+.answer-table {
+    width: 100%;
+    border: 1px solid white;
+    margin-bottom: 30px;
+}
+
+td {
+    padding: 15px;
+}
+
+td:not(:last-child) {
+    border-right: 1px solid white;
+}
+
+tr:not(:last-child) td {
+    border-bottom: 1px solid white;
+}
+
+.answer-table td:nth-child(3) {
+    width: 300px;
 }

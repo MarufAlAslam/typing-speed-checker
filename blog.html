@@ -14,7 +14,266 @@
 </head>
 
 <body>
-    <div class="blog-wrapper"></div>
+    <div class="nav">
+        <div class="nav__logo">
+            <h1 class="title"><img src="./logo.png" /></h1>
+        </div>
+        <div class="nav__links">
+            <a href="index.html">Home</a>
+            <a href="blog.html" class="active">Blogs</a>
+        </div>
+    </div>
+    <div class="blog-wrapper">
+        <div class="blog-title">
+            <h1 class="bold">Few Important Questions</h1>
+        </div>
+        <div class="blog-questions">
+            <h2 class="blog-question">
+                <span class="blog-question-number">1.</span>
+                <span class="blog-question-text">What is the difference between <span class="green">"Local
+                        Storage"</span> and <span class="green">"Session Storage"</span>?</span>
+            </h2>
+            <div class="blog-answer">
+                <table class="answer-table" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>
+                            <h3 class="bold">Local Storage</h3>
+                        </td>
+                        <td>
+                            <h3 class="bold">Session Storage</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                The storage capacity of local storage is 5MB/10MB
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                The storage capacity of session storage is 5MB
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                As it is not session-based, it must be deleted via javascript or manually
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                It’s session-based and works per window or tab. This means that data is stored only for
+                                the duration of a session, i.e., until the browser (or tab) is closed
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <h2 class="blog-question">
+                <span class="blog-question-number">2.</span>
+                <span class="blog-question-text">What is the difference between <span class="green">"Global Scope
+                        "</span> and <span class="green">"Block Scope"</span>?</span>
+            </h2>
+            <div class="blog-answer">
+                <table class="answer-table" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>
+                            <h3 class="bold">Global Scope</h3>
+                        </td>
+                        <td>
+                            <h3 class="bold">Block Scope</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                Variables declared Globally (outside any function) have Global Scope.
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                This scope restricts the variable that is declared inside a specific block
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>
+                                Global variables, that can be accessed from anywhere in a JavaScript program.
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                Can't be used anywhere outside of that block (function/condition etc)
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <h2 class="blog-question">
+                <span class="blog-question-number">3.</span>
+                <span class="blog-question-text">How does the <span class="green">"Event Loop"</span> works in
+                    JS?</span>
+            </h2>
+            <div class="blog-answer">
+                <table class="answer-table" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>
+                            Event loop is an endless loop, which waits for tasks, executes them and then sleeps until it
+                            receives more tasks. The event loop executes tasks from the event queue only when the call
+                            stack is empty i.e. there is no ongoing task. The event loop allows us to use callbacks and
+                            promises.
+                            <br> <br>
+                            The Event Loop has one simple job — to monitor the Call Stack and the Callback Queue. If the
+                            Call Stack is empty, the Event Loop will take the first event from the queue and will push
+                            it to the Call Stack, which effectively runs it. Such an iteration is called a tick in the
+                            Event Loop.
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <h2 class="blog-question">
+                <span class="blog-question-number">4.</span>
+                <span class="blog-question-text">How many ways you can get <span class="green">"undefined"</span> in
+                    JS?</span>
+            </h2>
+            <div class="blog-answer">
+                <table class="answer-table" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>
+                            Because of
+                        </td>
+                        <td>
+                            Description
+                        </td>
+                        <td>
+                            Example
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Uninitialized variable
+                        </td>
+                        <td>
+                            Every JavaScript variable that we create without assigning any value gets the value of
+                            undefined.
+                        </td>
+                        <td>
+                            <code>
+                                let num; <br>
+                                console.log(num);
+                            </code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Function argument that has not been supplied
+                        </td>
+                        <td>
+                            In JavaScript number of arguments that we supply does not have to match the Parameters of
+                            the functions. The unpassed arguments are set to undefined.
+                        </td>
+                        <td>
+                            <code>someFunc(1,2) <br>
+  <br>
+function someFunc(a, b ,c) { <br>
+    console.log(a) <br>
+    console.log(b) <br>
+    console.log(c) <br>
+}
+                            </code>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            The return value of functions that don’t return a value
+                        </td>
+                        <td>
+                            When a function has no return value, it returns undefined.
+                        </td>
+                        <td>
+                            <code>
+                                var a = someFunc() <br>
+ 
+console.log(a) <br>
+ 
+function someFunc() { <br>
+}
+                            </code>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Non-existing object Property
+                        </td>
+                        <td>
+                            Trying to access a non-existing property of an object returns undefined.
+                        </td>
+                        <td>
+                            <code>
+                                let person = { <br>
+                                    firstName: "Allie", <br>
+                                    lastName: "Grater", <br>
+                                };
+                                 <br>
+                                console.log(person.age) 
+                            </code>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Non-existing array elements
+                        </td>
+                        <td>
+                            Similarly, Non-existing array elements also return undefined.
+                        </td>
+                        <td>
+                            <code>
+                                const cars = ["Saab", "Volvo", "BMW"]; <br>
+ 
+console.log(cars[5]) 
+                            </code>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            void operator
+                        </td>
+                        <td>
+                            The void operator always returns undefined irrespective of the expression provided to it.
+                        </td>
+                        <td>
+                            <code>
+                                void (100)                 <br>
+                                void (true)                <br> 
+                                void {firstName: 'Bill'}   <br>
+                                void ("Hello")             <br>
+                            </code>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Explicitly set to undefined
+                        </td>
+                        <td>
+                            We can explicitly set a variable to undefined.
+                        </td>
+                        <td>
+                            <code>
+                                let myVar= undefined;
+                            </code>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

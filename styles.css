@@ -212,6 +212,25 @@ div#question {
   padding: 5px 15px;
 }
 
+.nav__links a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+}
+
+.nav__links a.active {
+  color: #9dffad;
+}
+
 @media only screen and (max-width: 992px) {
   #histories {
     display: grid;

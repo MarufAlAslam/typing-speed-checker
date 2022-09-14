@@ -73,6 +73,14 @@ body {
   color: white;
   text-align: center;
   padding: 2rem;
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div#result p {
+  margin: 5px;
 }
 
 #show-time {

@@ -17,7 +17,7 @@ body {
 }
 
 #question {
-  height: 100px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -148,9 +148,9 @@ button {
 }
 
 #histories {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .card {
@@ -171,6 +171,17 @@ button {
   margin-bottom: 30px;
 }
 
+div#histories .card {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+div#histories .card p {
+  margin-top: 10px;
+}
+
 #modal-background {
   background: rgb(255, 255, 255);
   background: linear-gradient(92.49deg,
@@ -183,10 +194,31 @@ button {
   top: 0;
 }
 
+div#question {
+  padding: 5px 15px;
+}
+
+@media only screen and (max-width: 992px) {
+  #histories {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  #histories {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 @media only screen and (max-width: 700px) {
   .box-container {
     padding: 0 20px;
     width: 100%;
+    padding-bottom: 20px;
   }
 
   .card {

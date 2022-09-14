@@ -69,6 +69,7 @@ const gameOver = () => {
   // so total time taken is current time - start time
   const finishTime = new Date().getTime();
   const timeTaken = Math.floor((finishTime - startTime) / 1000);
+  const cpm = Math.floor((questionText.length / timeTaken) * 60);
 
   // show result modal
   resultModal.innerHTML = "";
@@ -81,11 +82,13 @@ const gameOver = () => {
   // show result
   resultModal.innerHTML += `
     <h1>Finished!</h1>
+    <h3 class="green">Your Speed: ${cpm} CPM</h3>
     <p>You took: <span class="bold">${timeTaken}</span> seconds</p>
     <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
     <button onclick="closeModal()">Close</button>
   `;
 
+  console.log(userText.length, questionText.length);
   addHistory(questionText, timeTaken, errorCount);
 
   // restart everything

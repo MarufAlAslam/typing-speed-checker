@@ -6,7 +6,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 1240px;
+    max-width: 1240px;
+    width: 100%;
     margin: auto;
 }
 
@@ -38,4 +39,108 @@ tr:not(:last-child) td {
 
 .answer-table td:nth-child(3) {
     width: 300px;
+}
+
+@media screen and (max-width: 767px) {
+    .answer-table td {
+        display: flex;
+        padding-top: 35px;
+    }
+
+    td:last-child {
+        border-top: 1px solid white;
+    }
+
+    .answer-table.storage td:nth-child(1)::before {
+        content: 'Local Storage';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #9dffad;
+        color: black;
+        padding: 5px;
+    }
+
+    .answer-table.storage td:nth-child(2)::before {
+        content: 'Session Storage';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #eb6565;
+        color: white;
+        padding: 5px;
+    }
+
+
+    .answer-table.scope td:nth-child(1)::before {
+        content: 'Global Scope';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #9dffad;
+        color: black;
+        padding: 5px;
+    }
+
+    .answer-table.scope td:nth-child(2)::before {
+        content: 'Block Scope';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #eb6565;
+        color: white;
+        padding: 5px;
+    }
+
+    .answer-table.undefined td:nth-child(1)::before {
+        content: 'Because Of';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #9dffad;
+        color: black;
+        padding: 5px;
+    }
+
+    .answer-table.undefined td:nth-child(2)::before {
+        content: 'Description';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #eb6565;
+        color: white;
+        padding: 5px;
+    }
+
+    .answer-table.undefined td:nth-child(3)::before {
+        content: 'Example';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #487284;
+        color: white;
+        padding: 5px;
+    }
+
+    td:nth-child(3) {
+        width: 100%;
+    }
+
+    .answer-table tr:first-child {
+        display: none;
+    }
+
+    td {
+        position: relative;
+        border-right: unset;
+    }
+
+    td:not(:last-child) {
+        border-right: unset;
+        border-bottom: 0;
+    }
+
+    .answer-table.storage td:nth-child(1)::before {
+        content: 'local storage';
+    }
 }
